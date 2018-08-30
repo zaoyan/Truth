@@ -122,7 +122,7 @@ class ViewController: UIViewController {
     private var recentPlayers: Variable<[String]> = Variable([])
     
     // the number of stats currently supported
-    private var numOfStats = 10
+    private var numOfStats = 10 // TODO hardcoded value for this is gross, should be based on something appwide (if swift4.2 was out, could be enum)
     
     // needed for reactive variable observation
     private let disposeBag = DisposeBag()
@@ -619,10 +619,11 @@ class ViewController: UIViewController {
     @objc func filterTapped() {
         // analytics
         Flurry.logEvent("Filter Tapped")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let filterVC = storyboard.instantiateViewController(withIdentifier: "Info") as? FilterViewController else { assertionFailure("\(#function) Could not present InfoVC"); return }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        guard let filterVC = storyboard.instantiateViewController(withIdentifier: "Info") as? FilterViewController else { assertionFailure("\(#function) Could not present InfoVC"); return }
+        let filterVC = FilterViewControllerV2()
         filterVC.modalTransitionStyle = .flipHorizontal
-        filterVC.delegate = self
+//        filterVC.delegate = self
         present(filterVC, animated: true, completion: nil)
     }
     

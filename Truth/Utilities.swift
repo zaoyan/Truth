@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension RangeReplaceableCollection where IndexDistance == Int {
+extension RangeReplaceableCollection {
     // removes the front of a collection until only n elements remain
     mutating func keepLast(_ elementsToKeep: Int) {
         if count > elementsToKeep {

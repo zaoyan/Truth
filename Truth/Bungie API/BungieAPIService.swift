@@ -80,6 +80,7 @@ class BungieAPIService {
     var overallWinLossRatio: Variable<String> = Variable("")
     var overallKD: Variable<String> = Variable("")
     var overallKDA: Variable<String> = Variable("")
+  
     var info: Variable<String> = Variable("")
     var recentPlayers: Variable<[String]> = Variable([])
     var isLoading: Variable<Bool> = Variable(false)
